@@ -1,38 +1,101 @@
-.App {
+/* gradient:  */
+/* https://www.gradientmagic.com/collection/rainbowstandard */
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
+
+.header {
+  padding: 50px;
+  text-align: center;
+  font-family: Lato, sans-serif;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly; 
+  padding: 100px; 
+}
+
+.gradient-border {
+  --border-width: 3px;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 200px;
+  font-family: Lato, sans-serif;
+  font-size: 1.2rem;
+  color: black;
+  background: white;
+  border-radius: var(--border-width);
+  padding: 20px; 
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+      60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(44, 85%, 66%),
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite;
+  }
+}
+
+.text {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.description {
+  text-align-last: center;
+  font-family: Lato, sans-serif;
+  font-stretch: expanded;
+  column-count: 1;
+  column-width: 100px;
+  padding-bottom: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.image_layout {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column; /* Set flex direction to column */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text */
+  padding-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+img {
+  border-radius: 50%;
+  padding: 10px;
+  width: 250px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.name {
+  text-align: center;
+  font-style: italic;
+  font-size: small;
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
   }
 }
