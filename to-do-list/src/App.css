@@ -65,33 +65,12 @@
   text-align: center;
 }
 
-.description {
-  text-align-last: center;
-  font-family: Lato, sans-serif;
-  font-stretch: expanded;
-  column-count: 1;
-  column-width: 100px;
-  padding-bottom: 50px;
-}
-
-.image_layout {
+.button-layout {
   display: flex;
-  flex-direction: column; /* Set flex direction to column */
-  align-items: center; /* Center items horizontally */
-  text-align: center; /* Center text */
-  padding-bottom: 10px;
-}
-
-img {
-  border-radius: 50%;
-  padding: 10px;
-  width: 250px;
-}
-
-.name {
-  text-align: center;
-  font-style: italic;
-  font-size: small;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
 }
 
 @keyframes moveGradient {

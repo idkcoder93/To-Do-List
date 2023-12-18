@@ -1,14 +1,31 @@
 import './App.css';
 import React from 'react';
-import { SocialIcon } from 'react-social-icons'; // Updated import statement
-import AlexProfilePic from './images/profile_pic.jpeg';
-import ChrisProfilePic from './images/Chris_profile.jpeg';
+import { SocialIcon } from 'react-social-icons'; 
+import styled from 'styled-components';
+
+const Button = styled.button `
+  background-color: #00cc99;
+  color: white;
+  padding: 15px 20px;
+  margin: 10px 10px;
+  border-radius: 5px;
+  border-style: none;
+  outline: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0px 2px 2px lightgrey;
+  transition: ease background-color 250ms;
+  &:hover {
+    background-color: #03dba5;
+  }
+`
+
 
 function App() {
   return (
   <div>
     <div className="header">
-      <h1>This is not your ordinary task manager</h1>
+      <h1>Welcome to Taskers</h1>
     </div>
     <div className = "container">
       <div className="gradient-border">
@@ -28,29 +45,17 @@ function App() {
         </div>
       </div>
     </div>
-    <div className = "description">
-        <h2>About Us</h2>
-        <p>
-          Alex and Chris have created a to-do-list for you to <br />
-          customize your daily tasks which can be overwhelming. <br />
-          This application allows you to organize your tasks with its <br />
-          severity level. <br />
-          Dive into this to-do-list and see what it's all about.
-        </p>
-    </div>
-    <div className = "image_layout">
-      <img src={AlexProfilePic} alt="Alex's Profile" />
-      <span class="name">Alex Fridman</span>
-      <img src={ChrisProfilePic} alt="Chris's Profile" />
-      <span class="name">YoungSu Chris</span>
+    <div className='button-layout'>
+      <Button>Sign Up</Button>
+      <Button>Log In</Button>
     </div>
     <div className="header">
       <h2>Follow us on:</h2>
       <div className="social_media_app">
-        <SocialIcon url="https://twitter.com/" />
-        <SocialIcon url="https://facebook.com/" />
-        <SocialIcon url="https://instagram.com/" />
-        <SocialIcon url="https://github.com/" /> 
+        <SocialIcon url="https://twitter.com/" style={{marginRight: '10px'}}/>
+        <SocialIcon url="https://facebook.com/" style={{marginRight: '10px'}}/>
+        <SocialIcon url="https://instagram.com/" style={{marginRight: '10px'}}/>
+        <SocialIcon url="https://github.com/" style={{marginRight: '10px'}}/> 
       </div>
     </div>
   </div>
