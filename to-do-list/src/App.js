@@ -1,4 +1,5 @@
 import './App.css';
+import './signup.css';
 import React from 'react';
 import { SocialIcon } from 'react-social-icons'; 
 import styled from 'styled-components';
@@ -45,9 +46,15 @@ function App() {
         </div>
       </div>
     </div>
-    <div className='button-layout'>
-      <Button>Sign Up</Button>
-      <Button>Log In</Button>
+    <div class="main">
+      <p class="sign" align="center">Sign in</p>
+      <form class="form1" />
+        <input class="un " type="text" align="center" placeholder="Username" />
+        <input class="pass" type="password" align="center" placeholder="Password" />
+        <Button className="submit" style={{marginLeft: '155px'}}>sign in</Button>
+        <p class="forgot"><a href="#" />New User?</p> 
+        {/* ^^^^ will need to provide valid link for the href tag*/}
+        <p class="forgot"> Forgot Password?</p>
     </div>
     <div className="header">
       <h2>Follow us on:</h2>
