@@ -1,8 +1,10 @@
 import './registrationStyle.css';
 import './signup.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { SocialIcon } from 'react-social-icons'; 
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components';
+import axios from 'axios';
 
 const Button = styled.button `
   background-color: #00cc99;
@@ -20,9 +22,30 @@ const Button = styled.button `
     background-color: #03dba5;
   }
 `
+const Registration = () => {
 
+  const [values, setValues] = useState({
+    username:'',
+    password:''
+  })
 
-function Registration() {
+  const navigate = useNavigate();
+  const handleInput = (event) => {
+    setValues(prev => ({...prev, [event.target.name]: event.target.value}))
+
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.get(`http://localhost:3000/?username=${values.username}&password=${values.password}`);
+      console.log(response.data); // Log the response received from the server
+      navigate('/main');
+    } catch (error) {
+      console.error('Error occurred:', error);
+    }
+   };
+  
   return (
   <React.StrictMode>
   <div>
@@ -47,15 +70,18 @@ function Registration() {
         </div>
       </div>
     </div>
-    <div class="main">
-      <p class="sign" align="center">Sign in</p>
-      <form class="form1" />
-        <input class="un " type="text" align="center" placeholder="Username" />
-        <input class="pass" type="password" align="center" placeholder="Password" />
-        <Button className="submit" style={{marginLeft: '155px'}}>sign in</Button>
-        <p class="forgot">New User?</p> 
+    <div className="main">
+      <p className="sign" align="center">Sign in</p>
+      <form className="form1" onSubmit={handleSubmit}>
+        <input className="un " type="text" align="center" placeholder="Username" name='username'
+        onChange={handleInput}/>
+        <input className="pass" type="password" align="center" placeholder="Password" name='password'
+        onChange={handleInput} />
+        <Button className="submit" style={{marginLeft: '155px'}} type='submit'>sign in</Button>
+        <p className="forgot">New User?</p> 
         {/* ^^^^ will need to provide valid link for the href tag*/}
-        <p class="forgot"> Forgot Password?</p>
+        <p className="forgot"> Forgot Password?</p>
+      </form>
     </div>
     <div className="header">
       <h2>Follow us on:</h2>
