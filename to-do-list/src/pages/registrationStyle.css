@@ -15,7 +15,7 @@
 .container {
   display: flex;
   justify-content: space-evenly;
-  padding: 70px;
+  padding: 50px;
 }
 
 .gradient-border {

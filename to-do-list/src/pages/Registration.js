@@ -66,12 +66,16 @@ function Registration() {
             align="center"
             placeholder="Password"
           />
-          <Button className="submit" style={{ marginLeft: "155px" }}>
+          <Button className="submit" style={{ marginLeft: "305px" }}>
             sign in
           </Button>
-          <p class="forgot">New User?</p>
-          {/* ^^^^ will need to provide valid link for the href tag*/}
-          <p class="forgot"> Forgot Password?</p>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <p class="forgot" style={{ marginRight: "10px" }}>
+              New User?
+            </p>
+            {/* ^^^^ will need to provide valid link for the href tag*/}
+            <p class="forgot"> Forgot Password?</p>
+          </div>
         </div>
         <div className="header">
           <h2>Follow us on:</h2>
