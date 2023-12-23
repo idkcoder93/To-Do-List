@@ -4,8 +4,10 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // import Pages
+import LoginPage from "./pages/LoginPage";
 import Registration from "./pages/Registration";
 import MainPage from "./pages/mainPage";
+import Forgot from "./pages/Forgot";
 
 function App() {
   return (
