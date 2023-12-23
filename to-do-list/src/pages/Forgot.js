@@ -4,8 +4,8 @@ import "./Forgot.css";
 function Forgot() {
   return (
     <React.StrictMode>
-      <div className="Title">
-        <h1>Bye</h1>
+      <div className="header">
+        <h1>Shame..</h1>
       </div>
     </React.StrictMode>
   );

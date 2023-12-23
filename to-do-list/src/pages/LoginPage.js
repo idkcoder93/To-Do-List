@@ -50,25 +50,25 @@ function LoginPage() {
             </div>
           </div>
         </div>
-        <div class="main">
-          <p class="sign" align="center">
+        <div className="main">
+          <p className="sign" align="center">
             Sign in
           </p>
-          <form class="form1" />
+          <form className="form1" />
           <input
-            class="un "
+            className="input"
             type="text"
             align="center"
             placeholder="Username"
           />
           <input
-            class="pass"
+            className="input"
             type="password"
             align="center"
             placeholder="Password"
           />
           <Button className="submit" style={{ marginLeft: "305px" }}>
-            sign in
+            LogIn
           </Button>
 
           <div style={{ display: "flex", justifyContent: "center" }}>
@@ -82,8 +82,8 @@ function LoginPage() {
             </Link>
           </div>
         </div>
-        <div className="header">
-          <h2>Follow us on:</h2>
+        <div className="footer">
+          <h2>Follow Us on</h2>
           <div className="social_media_app">
             <SocialIcon
               url="https://twitter.com/"

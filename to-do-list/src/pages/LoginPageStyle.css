@@ -3,13 +3,22 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300");
 
 .header {
-  padding: 15px;
+  padding: 1px;
   text-align: center;
   font-family: Lato, sans-serif;
   background: #1abc9c;
   color: white;
   font-size: 30px;
-  padding-bottom: 14px;
+}
+
+.footer {
+  padding: 1px;
+  text-align: center;
+  font-family: Lato, sans-serif;
+  background: #1abc9c;
+  color: white;
+  font-size: 25px;
+  padding-bottom: 30px;
 }
 
 .container {
