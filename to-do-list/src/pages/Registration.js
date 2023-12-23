@@ -38,13 +38,16 @@ const Registration = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.get(`http://localhost:3000/?username=${values.username}&password=${values.password}`);
-      console.log(response.data); // Log the response received from the server
-      navigate('/main');
+      const response = await axios.get(`http://localhost:8080/?username=${values.username}&password=${values.password}`);
+      if (response.data === "Invalid credentials or user not found") {
+        console.log("Invalid credentials or user not found");
+      } else {
+        navigate('/main');
+      }
     } catch (error) {
       console.error('Error occurred:', error);
     }
-   };
+  };
   
   return (
   <React.StrictMode>

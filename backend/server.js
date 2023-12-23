@@ -9,9 +9,17 @@ app.use(express.json());
 const db = mysql.createConnection({
     host:"localhost",
     user:"root",
-    password:"",
+    password:"12345",
     database:"Tasker"
 })
+
+db.connect((err) => {
+    if (err) {
+        console.error('Error connecting to MySQL:', err);
+        return;
+    }
+    console.log('Connected to MySQL database!');
+});
 
 app.get('/', (req, res) => {
 
@@ -31,11 +39,14 @@ app.get('/', (req, res) => {
             return res.json("Invalid credentials or user not found");
         }
 
+        console.log("User data retrieved:", data[0]);
+
         // User found, return user data
         return res.json(data[0]); // Assuming only one user should match these credentials
     });
 });
 
-app.listen(3000, () => {
+const PORT = 8080;
+app.listen(PORT, () => {
     console.log("listening");
 })
