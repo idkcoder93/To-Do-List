@@ -1,5 +1,5 @@
-import './registrationStyle.css';
-import './signup.css';
+import './LoginPageStyle.css';
+import './LoginPage.css';
 import React, { useState } from 'react';
 import { SocialIcon } from 'react-social-icons'; 
 import { useNavigate } from 'react-router-dom'
